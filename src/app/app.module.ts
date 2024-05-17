@@ -15,6 +15,7 @@ import { CommentFormComponent } from './comments/comment-form/comment-form.compo
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-and-condition.component';
+import { PostCardComponent } from './layouts/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-an
     CommentFormComponent,
     CommentListComponent,
     AboutUsComponent,
-    TermsAndConditionComponent
+    TermsAndConditionComponent,
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
