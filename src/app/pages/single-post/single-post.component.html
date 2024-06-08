@@ -1,5 +1,8 @@
 <div class="container">
     <div class="row">
+        <div class="center " *ngIf="isLoading">
+            <img class="round" src="../../../assets/Pulse@1x-1.0s-200px-200px.gif" alt="loading">
+        </div>
         <div class="col-md-9">
             <div class="card">
                 <img src="{{postData.postImgPath}}">

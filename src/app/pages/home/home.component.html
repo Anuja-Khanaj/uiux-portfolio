@@ -7,6 +7,11 @@
     </div>
 
     <div class="row">
+
+        <div class="center" *ngIf=" isLoading">
+            <img class=" round" src="../../../assets/Pulse@1x-1.0s-200px-200px.gif" alt="loading">
+        </div>
+
         <div class="col-md-4 mt-3" *ngFor="let item2 of FeaturedArray">
             <app-post-card [postData]="item2"> </app-post-card>
         </div>
@@ -21,6 +26,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="row">
+         <div class="center " *ngIf=" isLoading">
+            <img class="round" src="../../../assets/Pulse@1x-1.0s-200px-200px.gif" alt="loading">
+        </div>
         <div class="col-md-4 mt-3" *ngFor="let item2 of LatestArray">
             <app-post-card [postData]="item2"> </app-post-card>
         </div>

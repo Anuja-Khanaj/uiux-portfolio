@@ -41,4 +41,7 @@ export class SubscriptionFormComponent {
       console.log('Form is invalid');
     }
   }
+  display(){
+    this.isSubscribed = true;
+  }
 }

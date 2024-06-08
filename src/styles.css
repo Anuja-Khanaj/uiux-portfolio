@@ -60,3 +60,13 @@ input[type = text],input[type = email]{
     font-size: 13px;
     background-color: var(--primary-color);
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round{
+    border-radius: 50%;
+}

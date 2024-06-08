@@ -9,13 +9,16 @@ import { PostsService } from 'src/app/services/posts.service';
 export class HomeComponent {
   FeaturedArray:Array<object>
   LatestArray:Array<object>
+  isLoading:boolean = true;
 constructor(private postservice:PostsService){
 
 }
 ngOnInit(){
   this.postservice.loadFetured().subscribe(val=>{
     console.log(val);
+    
     this.FeaturedArray = val
+    this.isLoading= false
   })
 
   this.postservice.loadLatest().subscribe(val=>{

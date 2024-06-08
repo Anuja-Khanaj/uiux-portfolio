@@ -10,6 +10,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class SingleCategoryComponent {
   postsArray: any;
   categoryObj
+  isLoading:boolean = true;
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
   ngOnInit(): void {
     this.route.params.subscribe(val => {
@@ -18,12 +19,13 @@ export class SingleCategoryComponent {
       this.categoryObj = val;
       const id = val['category'];
       console.log(id);
-
+      this.isLoading = true;
       this.postService.loadSingleCategory(id).subscribe(post => {
         console.log("logging post");
         console.log(post);
         this.postsArray = post;
       })
+      this.isLoading = false
     })
   }
 }
