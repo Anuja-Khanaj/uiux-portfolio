@@ -1,19 +1,25 @@
-<div class="card shadow-effect">
+<!-- subscription-form.component.html -->
+
+<div class="card container shadow-effect mt-4 " *ngIf="!isSubscribed">
     <div class="card-body">
-        <div class="text-center mt-3 mb-5">
-            <h3>SUBSCRIPTION FORM</h3>
-            <p class="m-auto subs-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugi
-            <form action="" class="form-inline mb-5 mt-5">
-                <div class="form-group col-md-5">
-                    <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="form-group col-md-5">
-                    <input type="email" class="form-control" placeholder="Email Address">
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-info btn-clock btn-theme">Subscribe</button>
-                </div>
-            </form>
-        </div>
+      <div class="text-center mt-3 mb-5">
+        <h3>SUBSCRIPTION FORM</h3>
+        <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+          <div class="form-group m-3">
+            <input type="text" class="form-control" placeholder="Your Name" formControlName="name">
+            <div *ngIf="subscriptionForm.get('name').invalid && subscriptionForm.get('name').touched" class="text-danger">Name is required</div>
+          </div>
+          <div class="form-group m-3">
+            <input type="email" class="form-control" placeholder="Email Address" formControlName="email">
+            <div *ngIf="subscriptionForm.get('email').invalid && subscriptionForm.get('email').touched" class="text-danger">
+              <div *ngIf="subscriptionForm.get('email').errors?.['required']">Email is required</div>
+              <div *ngIf="subscriptionForm.get('email').errors?.['email']">Invalid email format</div>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-info btn-block px-4 btn-theme" [disabled]="!subscriptionForm.valid">Subscribe</button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>

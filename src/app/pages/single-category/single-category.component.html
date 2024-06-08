@@ -1,25 +1,16 @@
 <div class="bg-theme p-5">
-    <div class="container">
-        <h1 class="text-white"> General Knowledge </h1>
-        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="">
+        <h1 class="text-white text-center"> {{categoryObj.category}} Post </h1>
+        <p class="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <app-post-card> </app-post-card>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let item of postsArray">
+                <app-post-card [postData]="item"> </app-post-card>
+            </div>
         </div>
-        <div class="col-md-4">
-            <app-post-card> </app-post-card>
-        </div>
-        <div class="col-md-4">
-            <app-post-card> </app-post-card>
-        </div>
-        <div class="col-md-4">
-            <app-post-card> </app-post-card>
-        </div>
-        <div class="col-md-4">
-            <app-post-card> </app-post-card>
+        <div class="row" *ngIf="postsArray == []">
+           <h2 class="text-danger">No posts found</h2>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 .card{
     background-color: var(--secondary-color);
-    width: 1200px;
+    
 }
 
 input[type = text],input[type = email]{
@@ -15,5 +15,13 @@ input[type = text],input[type = email]{
 }
 
 .subs-text{
-    width: 500px;
+    /* width: 500px; */
 }
+.has-error .form-control {
+    border-color: #a94442;
+  }
+  
+  .has-error .alert-danger {
+    color: #a94442;
+  }
+  

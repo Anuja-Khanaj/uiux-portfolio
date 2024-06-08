@@ -2,29 +2,30 @@
     <div class="row">
         <div class="col-md-9">
             <div class="card">
-                <img src="./../../../assets/img2.jpg">
+                <img src="{{postData.postImgPath}}">
                 <div class="card-body">
-                    <small class="bg-light text-danger text-center"> Design </small>
+                    <small class="bg-light text-danger text-center"> {{postData.category.category}} </small>
                     <small class="bg-light text-sucess text-center ml-2"> Featured </small>
-                    <small class="bg-light text-info text-center ml-2"> Views 100,256 </small>
-                    <small class="bg-light text-warning text-center ml-2"> LAST UPDATED - SEP 20, 2021</small>
-                        <h1 class="mt-3 mb-3"></h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate sapiente adipisci, est officia laudantium repellat earum atque doloremque. Sint rem soluta repudiandae dolor laudantium fuga aut nulla blanditiis a magni mollitia fugit assumenda, incidunt maiores cum quibusdam illo! Velit ducimus, saepe id voluptatibus odio nostrum alias culpa odit libero fugit, ullam, modi veritatis beatae tempora sapiente dolorum aspernatur ad dolores assumenda? Cumque laborum at totam dolor exercitationem atque earum repellendus eius aspernatur adipisci, sint sapiente cupiditate asperiores perspiciatis id obcaecati cum distinctio voluptatum. Amet earum veniam dolore voluptatibus quod adipisci reiciendis recusandae culpa assumenda expedita! Minus aut quis officia fuga illo quasi, a, porro blanditiis minima labore doloribus praesentium rerum optio placeat! Unde harum necessitatibus porro repellat incidunt velit doloribus, soluta autem praesentium libero iusto dolor quas ducimus voluptas sed accusamus assumenda! Facilis rem in consequuntur dolores molestiae eveniet aliquid dolor voluptatum asperiores, iure eligendi repellat ex vero doloribus nulla omnis dolorem id labore veniam velit ipsam. Error, sit est? Harum rem dolorum ad veniam maiores, ipsum eum quis voluptatum fuga assumenda suscipit autem asperiores eius. Praesentium quod earum labore iure autem dolorum facere in fugiat. Praesentium debitis, eligendi sapiente eius odit, iusto cupiditate quaerat deserunt quam incidunt quasi animi?</p>
+                    <small class="bg-light text-info text-center ml-2"> Views {{postData.Views}} </small>
+                    <small class="bg-light text-warning text-center ml-2"> LAST UPDATED - {{postData.createdAt.toMillis() | date}} </small>
+                        <h1 class="mt-3 mb-3"> {{postData.title}} </h1>
+                        <p [innerHtml] = "postData.content">
+                            
+                        </p>
                 </div>
             </div>
         </div>
-        <app-comment-form></app-comment-form>
-        <app-comment-list></app-comment-list>
         <div class="col-md-3">
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
-
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
-
-            <app-post-card></app-post-card>
-
+     <h3 class="mt-3"><b>Similar Posts</b></h3>
+            <div *ngFor="let item of similarPostArray">
+                <app-post-card [postData]="item"></app-post-card>
+            </div>
             
         </div>
+        
+
+       
     </div>
+    <!-- <app-comment-form></app-comment-form>
+        <app-comment-list></app-comment-list> -->
 </div>
