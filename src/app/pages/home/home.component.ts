@@ -7,7 +7,8 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  FeaturedArray:Array<object>
+  searchText:string
+  FeaturedArray:any[]
   LatestArray:Array<object>
   isLoading:boolean = true;
 constructor(private postservice:PostsService){

@@ -27,6 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { WordSlicePipe } from './word-slice.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutUsComponent,
     TermsAndConditionComponent,
   PostCardComponent,
-  WordSlicePipe
+  WordSlicePipe,
+  SearchPipe,
+ 
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

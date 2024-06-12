@@ -3,16 +3,17 @@
 
     <div class=" text-center">
         <h2 class="text-white"> Featured Posts </h2>
-        <p class="text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-    </div>
+    
+<input type="text" [(ngModel)]="searchText" placeholder="Search">
+        </div>
 
     <div class="row">
 
-        <div class="center" *ngIf=" isLoading">
+        <div class="center" *ngIf=" isLoading " >
             <img class=" round" src="../../../assets/Pulse@1x-1.0s-200px-200px.gif" alt="loading">
         </div>
 
-        <div class="col-md-4 mt-3" *ngFor="let item2 of FeaturedArray">
+        <div class="col-md-3 mt-2" *ngFor="let item2 of FeaturedArray | search:searchText">
             <app-post-card [postData]="item2"> </app-post-card>
         </div>
 
